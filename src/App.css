@@ -12,14 +12,12 @@
 }
 
 .button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  display: inline-flex;
   gap: 8px;
-
-  padding: 4px 0;
-
-  border-bottom: 2px solid black;
 }
 
 .clickable-area {
