@@ -9,6 +9,9 @@ interface Point {
 function App() {
   const [points, setPoints] = useState<Point[]>([]);
 
+  // Storage of `undone` points, used to re-spawn the points
+  const [cache, setCache] = useState<Point[]>([]);
+
   const spawn = (event: MouseEvent): void => {
     const { clientX, clientY } = event;
 
@@ -19,6 +22,16 @@ function App() {
         y: clientY,
       },
     ]);
+  };
+
+  const undo = (): void => {
+    if (points.length > 0) {
+      const newPoints = [...points];
+      const lastPoint = newPoints.pop() as Point;
+
+      setCache([...cache, lastPoint]);
+      setPoints(newPoints);
+    }
   };
   };
 
