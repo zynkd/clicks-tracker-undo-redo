@@ -9,6 +9,8 @@
 
   display: flex;
   flex-direction: column;
+
+  background-color: #eee;
 }
 
 .button-wrapper {
@@ -20,6 +22,22 @@
   gap: 8px;
 }
 
+.button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: darkred;
+  color: white;
+  padding: 0.6rem 0.8rem;
+  border: 2px solid gray;
+  border-radius: 0.4rem;
+  box-shadow: 2px 1px 6px gray;
+}
+
+.button:hover {
+  background-color: black;
+  transition: 300ms;
+}
+
 .clickable-area {
   display: flex;
   flex: 1;
@@ -27,10 +45,11 @@
 
 .point {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background-color: red;
+  border: 1px solid gray;
 
   transform: translate(-50%, -50%);
 }

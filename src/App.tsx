@@ -47,9 +47,9 @@ function App() {
   return (
     <div className='App'>
       <div className='button-wrapper'>
-        <button onClick={undo}>Undo</button>
+        <button className='button' onClick={undo}>Undo</button>
 
-        <button onClick={redo}>Redo</button>
+        <button className='button' onClick={redo}>Redo</button>
       </div>
 
       <div className='clickable-area' onClick={spawn}>
