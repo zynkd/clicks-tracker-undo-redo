@@ -4,7 +4,13 @@ import './App.css';
 function App() {
   return (
     <div className='App'>
-      <h1>Hello world!</h1>
+      <div className='button-wrapper'>
+        <button>Undo</button>
+
+        <button>Redo</button>
+      </div>
+
+      <div className='clickable-area'></div>
     </div>
   );
 }
