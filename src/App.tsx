@@ -1,4 +1,5 @@
 import React, { MouseEvent, useState } from 'react';
+import UndoRedoButtons from './components/UndoRedoButtons';
 import './App.css';
 
 interface Point {
@@ -46,11 +47,7 @@ function App() {
 
   return (
     <div className='App'>
-      <div className='button-wrapper'>
-        <button className='button' onClick={undo}>Undo</button>
-
-        <button className='button' onClick={redo}>Redo</button>
-      </div>
+      <UndoRedoButtons undo={undo} redo={redo} />
 
       <div className='clickable-area' onClick={spawn}>
         {points.map(({ x, y }: Point, i: number) => (
