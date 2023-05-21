@@ -33,14 +33,23 @@ function App() {
       setPoints(newPoints);
     }
   };
+
+  const redo = (): void => {
+    if (cache.length > 0) {
+      const newCache = [...cache];
+      const lastCacheItem = newCache.pop() as Point;
+
+      setCache(newCache);
+      setPoints([...points, lastCacheItem]);
+    }
   };
 
   return (
     <div className='App'>
       <div className='button-wrapper'>
-        <button>Undo</button>
+        <button onClick={undo}>Undo</button>
 
-        <button>Redo</button>
+        <button onClick={redo}>Redo</button>
       </div>
 
       <div className='clickable-area' onClick={spawn}>
