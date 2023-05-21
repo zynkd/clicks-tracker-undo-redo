@@ -12,10 +12,14 @@ function App() {
   const spawn = (event: MouseEvent): void => {
     const { clientX, clientY } = event;
 
-    setPoints([...points, {
-      x: clientX,
-      y: clientY,
-    }]);
+    setPoints([
+      ...points,
+      {
+        x: clientX,
+        y: clientY,
+      },
+    ]);
+  };
   };
 
   return (
@@ -28,7 +32,11 @@ function App() {
 
       <div className='clickable-area' onClick={spawn}>
         {points.map((point: Point, i: number) => (
-          <div key={`point-${i}`} style={{ top: point.y - 5, left: point.x - 5 }} className='point'></div>
+          <div
+            key={`point-${i}`}
+            style={{ top: point.y - 5, left: point.x - 5 }}
+            className='point'
+          ></div>
         ))}
       </div>
     </div>
