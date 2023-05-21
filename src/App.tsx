@@ -53,10 +53,10 @@ function App() {
       </div>
 
       <div className='clickable-area' onClick={spawn}>
-        {points.map((point: Point, i: number) => (
+        {points.map(({ x, y }: Point, i: number) => (
           <div
             key={`point-${i}`}
-            style={{ top: point.y - 5, left: point.x - 5 }}
+            style={{ top: y, left: x }}
             className='point'
           ></div>
         ))}
