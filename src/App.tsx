@@ -60,6 +60,14 @@ function App() {
             className='point'
           ></div>
         ))}
+
+        {cache.map(({ x, y }: Point, i: number) => (
+          <div
+            key={`cache-${i}`}
+            style={{ top: y, left: x }}
+            className='cache'
+          ></div>
+        ))}
       </div>
     </div>
   );
