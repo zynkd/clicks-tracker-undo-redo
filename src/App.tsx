@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import './App.css';
 
 function App() {
+  const spawn = (event: MouseEvent): void => {
+    const { clientX, clientY } = event;
+    console.log(clientX, clientY);
+  };
+
   return (
     <div className='App'>
       <div className='button-wrapper'>
@@ -10,7 +15,7 @@ function App() {
         <button>Redo</button>
       </div>
 
-      <div className='clickable-area'></div>
+      <div className='clickable-area' onClick={spawn}></div>
     </div>
   );
 }
