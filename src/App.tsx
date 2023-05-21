@@ -1,10 +1,21 @@
-import React, { MouseEvent } from 'react';
+import React, { MouseEvent, useState } from 'react';
 import './App.css';
 
+interface Point {
+  x: number,
+  y: number,
+}
+
 function App() {
+  const [points, setPoints] = useState<Point[]>([]);
+
   const spawn = (event: MouseEvent): void => {
     const { clientX, clientY } = event;
-    console.log(clientX, clientY);
+
+    setPoints([...points, {
+      x: clientX,
+      y: clientY,
+    }]);
   };
 
   return (
