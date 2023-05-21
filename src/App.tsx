@@ -2,8 +2,8 @@ import React, { MouseEvent, useState } from 'react';
 import './App.css';
 
 interface Point {
-  x: number,
-  y: number,
+  x: number;
+  y: number;
 }
 
 function App() {
@@ -26,7 +26,11 @@ function App() {
         <button>Redo</button>
       </div>
 
-      <div className='clickable-area' onClick={spawn}></div>
+      <div className='clickable-area' onClick={spawn}>
+        {points.map((point: Point, i: number) => (
+          <div key={`point-${i}`} style={{ top: point.y - 5, left: point.x - 5 }} className='point'></div>
+        ))}
+      </div>
     </div>
   );
 }
